@@ -6,17 +6,20 @@ home-text-color = #37474f
 
 .container-home
 	margin 0 auto
-	margin-top 20px
+	margin-top 120px
 	width 400px
-	input, button
-		box-sizing border-box
-		color home-text-color
-		font-size font-size-app
-		font-family font-family-home
-		outline none
-		padding 10px
-
+	text-align center
 	.login
+	.register
+		a,input, button
+			box-sizing border-box
+			color home-text-color
+			font-size font-size-app
+			font-family font-family-home
+			outline none
+			padding 10px
+			text-decoration none
+
 		input
 			background-color transparent
 			border none
@@ -27,17 +30,18 @@ home-text-color = #37474f
 			width 100%
 			&:focus
 				border-bottom 2px solid black
-	.options
-		margin-top 30px
-		button
-			background-color white
-			border 2px solid transparent
-			border-radius 50px
-			cursor pointer
-			display inline-block
-			width 47%
-			&:hover
-				border-color home-text-color
-				transition .3s all linear
-		:nth-child(2)
-			margin-left 6%
+		.options
+			margin-top 30px
+			text-align center
+			.option
+				background-color white
+				border 2px solid transparent
+				border-radius 50px
+				cursor pointer
+				display inline-block
+				width 47%
+				&:hover
+					border-color home-text-color
+					transition .3s all linear
+			:nth-child(2)
+				margin-left 6%

@@ -1,11 +1,17 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET hombre page */
+/* GET home page */
 router.get('/', function  (req, res, next) {
-	res.render('home',{
+	res.render('login',{
 		title:'Home'
 	});
-})
+});
+
+router.get('/register', function  (req, res, next) {
+	res.render('register',{
+		title:'Register'
+	});
+});
 
 module.exports = router;
