@@ -4,7 +4,7 @@ if(!global.hasOwnProperty('db')) {
 
 	mongoose.connect('mongodb://localhost/' + dbName);
 
-	global.db - {
+	global.db = {
 		mongoose: mongoose,
 		User: require('./User')(mongoose),
 		Message: require('./Message')(mongoose)

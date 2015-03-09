@@ -6,11 +6,11 @@ block content
 			span.fa.fa-weixin
 			&nbsp
 			strong Come let's chat
-		.login
-			form(action="/login",method="POST")
-				input(type="text",placeholder="Name")
-				input(type="text",placeholder="Username")
-				input(type="password",placeholder="Password")
+		.register
+			form(action="/register",method="POST")
+				input(type="text",name="name",placeholder="Name")
+				input(type="text",name="username",placeholder="Username")
+				input(type="password",name="password",placeholder="Password")
 				input(type="password",placeholder="Password Confirm")
 				.options
 					a.option(href="/") I have a account!
