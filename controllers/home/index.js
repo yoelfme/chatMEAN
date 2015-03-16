@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var encrypter = require('./encrypter');
 
 app.post('/login', function(req, res){
   authenticate(req.body.username, req.body.password, function(err, user){
@@ -40,14 +41,21 @@ router.get('/register', function (req, res, next) {
 /* Routes post of home */
 route.post('/register', function (req, res, next) {
 	var input = req.body;
-
 	var newUser = new db.User(input);
-	newUser.save(function (error, user) {
-		if (error) {
-			res.json(error)
-		};
 
-		res.redirect('/login');
+	encrypter.hash(input.password, function(err, salt, hash) {
+	  	if (err) {
+	    	console.log(err);
+	  	}
+	  	// user.salt = salt;
+	  	newUser.password = password;
+	  	newUser.save(function(err) {
+		    if (err) {
+		      	console.log(err);
+		    } else {
+		      	res.redirect('/login');
+		    }
+	  	});
 	});
 });
 
