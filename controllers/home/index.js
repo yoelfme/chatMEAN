@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var encrypter = require('./encrypter');
 
-app.post('/login', function(req, res){
+router.post('/login', function(req, res){
   authenticate(req.body.username, req.body.password, function(err, user){
     if (user) {
       req.session.regenerate(function(){
@@ -26,7 +26,7 @@ router.get('/login', function  (req, res, next) {
 	});
 });
 
-app.get('/logout', function (req, res) {
+router.get('/logout', function (req, res) {
    delete req.session.user_id;
    res.redirect('/login');
 });  
@@ -39,7 +39,7 @@ router.get('/register', function (req, res, next) {
 });
 
 /* Routes post of home */
-route.post('/register', function (req, res, next) {
+router.post('/register', function (req, res, next) {
 	var input = req.body;
 	var newUser = new db.User(input);
 
