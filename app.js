@@ -39,7 +39,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'bower_components')));
 
 // Configure middleware to methodOverride
-app.use(methodOverride(function(req, res){
+app.use(methodOverride(function(req, res) {
   if (req.body && typeof req.body === 'object' && '_method' in req.body) {
     // look in urlencoded POST bodies and delete it
     var method = req.body._method
@@ -86,14 +86,14 @@ app.use(function(err, req, res, next) {
 server.listen(port);
 
 // Listener when ocurred error in server
-server.on('error',function  (error) {
+server.on('error',function(error) {
     if (error.syscall !== 'listen')
         throw error;
 
     var bind = typeof port == 'string' ? 'Pipe ' + port : 'Port' + port;
 
     // handle specific listen erros with friendly messages
-    switch(error.code) {
+    switch (error.code) {
         case 'EACCES':
             console.error(bind + 'requires elevated privileges');
             process.exit(1);
@@ -107,7 +107,7 @@ server.on('error',function  (error) {
     }
 });
 
-server.on('listening', function () {
+server.on('listening', function() {
     var address = server.address();
 
     var bind = typeof address == 'string' ? 'pipe ' + port : 'port ' + port;

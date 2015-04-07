@@ -8,7 +8,7 @@ var paths = {
 }
 
 // Set task to compress file stylus and convert to css
-gulp.task('compress',function () {
+gulp.task('compress',function() {
 	gulp.src('./public/stylus/style.styl')
 		.pipe(stylus({
 			compress: true
@@ -18,7 +18,7 @@ gulp.task('compress',function () {
 
 // Rerun the task when a file changes
 gulp.task('watch', function() {
-  gulp.watch(paths.styl, ['compress']);
+  gulp.watch(paths.styl, [ 'compress' ]);
 });
 
-gulp.task('default',['watch','compress']);
+gulp.task('default',[ 'watch','compress' ]);
